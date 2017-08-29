@@ -1,8 +1,12 @@
 SRC = gtk_hello.c
-OUT = _build/gtk_hello
+OUT_DIR = _build/
+OUT = $(OUT_DIR)gtk_hello
 
-all: $(SRC)
+all: $(SRC) $(OUT_DIR)
 	gcc $(SRC) -o $(OUT) `pkg-config gtk+-2.0 --cflags --libs`
 
+$(OUT_DIR):
+	mkdir -p $(OUT_DIR)
+
 clean:
-	rm $(OUT)
+	rm -rf $(OUT_DIR)
