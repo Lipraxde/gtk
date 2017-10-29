@@ -1,11 +1,10 @@
 OUT_DIR = _build/
 SRC_DIR = ./
 
-SRCS += $(SRC_DIR)gtk_hello.c
-SRCS += $(SRC_DIR)test.c
+SRCS += $(SRC_DIR)signal.c
 
 OBJS := $(SRCS:$(SRC_DIR)%.c=$(OUT_DIR)%.o)
-OUT   = $(OUT_DIR)gtk_hello
+OUT   = $(OUT_DIR)signal
 
 CFLAGS += `pkg-config gtk+-2.0 --cflags --libs`
 DEBUG_FLAG += -g
