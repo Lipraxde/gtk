@@ -14,10 +14,10 @@ DEBUG_FLAG += -g
 all: $(OUT_DIR) $(OUT)
 
 $(OUT): $(OBJS)
-	$(CC) $(CFLAGS) $^ -o $(OUT)
+	$(CC) $^ $(CFLAGS) -o $(OUT)
 
 $(OBJS): $(OUT_DIR)%.o : $(SRC_DIR)%.c
-	$(CC) $(CFLAGS) $(DEBUG_FLAG) -c $< -o $@
+	$(CC) -c $< $(CFLAGS) $(DEBUG_FLAG) -o $@
 
 $(OUT_DIR):
 	mkdir -p $@
